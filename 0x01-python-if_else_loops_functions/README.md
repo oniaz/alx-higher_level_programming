@@ -35,7 +35,7 @@ This Python function, `print_last_digit(number)`, prints the last digit of the i
 ##### [10. add](10-add.py)
 This Python function, `add(a, b)`, takes two integers as input, adds them together, and returns the result.
 
-##### [11. pow](100-print_tebahpla.py)
+##### [11. pow](11-pow.py)
 This Python function, `pow(a, b)`, calculates the value of `a` raised to the power of `b` and returns the result.
 
 ##### [12. fizzbuzz](12-fizzbuzz.py)
@@ -47,6 +47,6 @@ Each element is followed by a space.
 
 ##### [13. Reverse Alphabet Printer](100-print_tebahpla.py)
 This Python script prints the ASCII alphabet in reverse order, with alternating lowercase and uppercase characters, starting with 'z' in lowercase and 'Y' in uppercase.
-<>
+
 ##### [14. remove_char_at](101-remove_char_at.py)
 This Python function, `remove_char_at(str, n)`, creates a copy of the input string `str` while removing the character at the specified position `n`. The position `n` follows the "C array index" convention.
