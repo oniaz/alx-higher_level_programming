@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * *insert_nodeint_at_index - inserts a new node at a given position.
+ * *insert_node - inserts a number into a sorted singly linked list
  * @head: pointer to the pointer to the head node of the list.
  * @number: int value of the node to be added.
  *
