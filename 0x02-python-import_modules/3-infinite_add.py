@@ -7,3 +7,4 @@ if __name__ == "__main__":
         for i in range(length):
             sum += int(argv[i+1])
     print(sum)
+    
