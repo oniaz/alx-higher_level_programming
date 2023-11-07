@@ -16,6 +16,7 @@ listint_t *reverser(listint_t *mid)
     }
     return (current);
 }
+
 /**
  * is_palindrome - checks if a singly linked list is a palindrome.
  * @head: double pointer to the head node.
@@ -25,34 +26,48 @@ listint_t *reverser(listint_t *mid)
 int is_palindrome(listint_t **head)
 {
     int size = 1, i;
-    listint_t *ptr1 = *head, *end;
+    listint_t *start = *head, *end;
 
     if (!*head)
         return (1);
 
     /* get the list size*/
-    while (ptr1->next)
+    while (start->next)
     {
         size++;
-        ptr1 = ptr1->next;
+        start = start->next;
     }
 
     /* get the mid index*/
-    ptr1 = *head;
+    start = *head;
 
     /* traverse to the mid */
     for (i = 0; i < size / 2; i++)
-        ptr1 = ptr1->next;
-    end = reverser(ptr1);
+        start = start->next;
+    /* reversing*/
+    listint_t *prev, *current, *mynext;
 
-ptr1 = *head;
+    prev = start;
+    mynext = prev->next;
 
-for (i = 0; i < size / 2; i++)
-{
-    if (end->n != ptr1->n)
-        return 0;
-    end = end->next;
-    ptr1 = ptr1->next;
-}
-return (1);
+    while (mynext)
+    {
+        current = mynext;
+        mynext = current->next;
+        current->next = prev;
+        prev = current;
+    }
+
+    end = current;
+    start = *head;
+
+    for (i = 0; i < size / 2; i++)
+    {
+        if (end->n != start->n)
+            return 0;
+        end = end->next;
+        start = start->next;
+    }
+
+    return (1);
 }
