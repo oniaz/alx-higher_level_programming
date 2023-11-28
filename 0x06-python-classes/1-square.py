@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""task 1"""
+"""A module representing a square """
 
 
 class Square:
-    """square."""
+    """A class representing a square """
 
-    def __init__(self, size=None):
-        """ square initialization
+    def __init__(self, size=0):
+        """Initialize a square with a given size.
 
         Args:
-            size (int): square size
+            size (int): The size of the square.
         """
         self.__size = size

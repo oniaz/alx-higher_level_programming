@@ -1,21 +1,27 @@
 #!/usr/bin/python3
-""" task 3 or whatever """
+"""A module representing a square """
 
 
 class Square:
-    """ some square that does stuff. """
+    """A class representing a square """
+
     def __init__(self, size=0):
-        """ square initialization
+        """Initialize a square with a given size.
 
         Args:
-            size(int): square size
+            size (int): The size of the square.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        if size < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
+        else:
+            self.__size = size
 
     def area(self):
-        """ returns the area of the square """
+        """Calculates and returns the area of the square its size.
+
+        Returns:
+            int: The area of the square.
+        """
         return self.__size * self.__size
