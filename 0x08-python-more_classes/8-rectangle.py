@@ -49,7 +49,7 @@ class Rectangle:
         """Sets the width of the rectangle.
 
         Args:
-        - value (int): The value to be set as the width of the rectangle.
+            value (int): The value to be set as the width of the rectangle.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -63,7 +63,7 @@ class Rectangle:
         """Sets the height of the rectangle.
 
         Args:
-        - value (int): The value to be set as the height of the rectangle.
+            value (int): The value to be set as the height of the rectangle.
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -109,7 +109,7 @@ class Rectangle:
         recreate a new instance by using eval().
 
         Returns:
-        string: a string representation of the rectangle.
+            string: a string representation of the rectangle.
         """
         return "Rectangle(" + str(self.__width) + ", " + \
             str(self.__height) + ")"
@@ -133,8 +133,8 @@ class Rectangle:
             Rectangle.
 
         Returns:
-            the biggest rectangle based on the area. If areas are equal returns
-            rect_1.
+            string: the biggest rectangle based on the area. If areas are equal
+            returns rect_1.
         """
 
         if not isinstance(rect_1, Rectangle):
