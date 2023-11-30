@@ -100,5 +100,5 @@ class Rectangle:
         Returns:
         string: a string representation of the rectangle.
         """
-        return "Rectangle(" + str(self.__width) + "," + \
+        return "Rectangle(" + str(self.__width) + ", " + \
             str(self.__height) + ")"
