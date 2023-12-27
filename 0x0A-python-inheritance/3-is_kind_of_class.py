@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Task 2 module.
-    This module provides a function that checks if a given instance is of a 
+    This module provides a function that checks if a given instance is of a
     specified class or one of its subclasses.
 """
 
