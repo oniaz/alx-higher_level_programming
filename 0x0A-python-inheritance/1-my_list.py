@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Task 2 Module. Contains a function that prints the list sorted ascendingly.
 """
 
