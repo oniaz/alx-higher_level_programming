@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ task 2. Docstring testing """
 
+
 def say_my_name(first_name, last_name=""):
     """ prints first and last name """
     if type(first_name) is not str:
