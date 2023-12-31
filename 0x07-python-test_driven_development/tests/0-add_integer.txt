@@ -11,7 +11,26 @@ Testing the add_integer function from the 0-add_integer module:
     >>> add_integer(2.5, 3.1)
     5
 
+# One argument
+    >>> add_integer(1)
+    99
+
+# No arguments
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
 # Non-integers
     >>> add_integer("one", "two")
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+# float NaN
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+# float Overflow
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
