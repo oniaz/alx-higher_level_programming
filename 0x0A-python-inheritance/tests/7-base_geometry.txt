@@ -65,8 +65,15 @@ Testing the BaseGeometry class from base_geometry module:
         Traceback (most recent call last):
         TypeError: length must be an integer
 
+    # value is a set:
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("length", {3, 4})
+        Traceback (most recent call last):
+        TypeError: length must be an integer
+
     # value is None:
         >>> bg = BaseGeometry()
         >>> bg.integer_validator("length", None)
         Traceback (most recent call last):
         TypeError: length must be an integer
+
