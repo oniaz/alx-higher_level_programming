@@ -24,4 +24,12 @@ Testing the print_sorted method of the MyList class:
     >>> my_list.print_sorted()
     [-4, 0, 3]
 
+# Returning a new list
+    >>> my_list = MyList()
+    >>> my_list.append(55)
+    >>> my_list.append(-4)
+    >>> my_list.print_sorted()
+    [-4, 55]
+    >>> print(my_list)
+    [55, -4]
 
