@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-import unittest
-from models.base import Base
 """ Tests for Base module """
 
-class TestBaseClass(unittest.TestCase):
+import unittest
+from models.base import Base
+
+
+class TestBase(unittest.TestCase):
+    """ Testing the base class """
+
     def test_no_id(self):
-        """isntance created with no id provided (assigned automatically after
+        """instance created with no id provided (assigned automatically after
         incrementation)"""
         b = Base()
         self.assertEqual(b.id, 1)
@@ -16,8 +20,8 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(b.id, 22)
 
     def test_no_id_inc(self):
-        """isntance created with no id provided (assigned automatically after
-        incrementation)"""
+        """2 isntance created with no id provided (assigned automatically after
+        incrementation) b1.id == b1.id + 1 ?"""
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id + 1, b2.id)
