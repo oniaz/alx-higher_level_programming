@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ task 1 - Base Class"""
 
+
 class Base:
     " Base Class. maganes id attribute for all subclasses"
     __nb_objects = 0
