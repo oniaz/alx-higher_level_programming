@@ -8,9 +8,11 @@ class TestBaseClass(unittest.TestCase):
         """isntance created with no id provided (assigned automatically after
         incrementation)"""
         b1 = Base()
+        b2 = Base()
         self.assertEqual(b1.id, 1)
+        self.assertEqual(b2.id, 2)
 
     def test_given_id(self):
         """ isntance created with id provided """
-        b2 = Base(22)
-        self.assertEqual(b2.id, 22)
+        b = Base(22)
+        self.assertEqual(b.id, 22)
