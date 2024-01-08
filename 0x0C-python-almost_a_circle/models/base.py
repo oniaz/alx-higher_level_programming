@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" task 1 - Base Class"""
+""" Base Class"""
 
 
 class Base:
