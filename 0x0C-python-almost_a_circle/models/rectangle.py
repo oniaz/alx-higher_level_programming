@@ -26,28 +26,35 @@ class Rectangle(Base):
         self.y = y
 
     def int_validator(name, n):
+        """ Checks if n is an int.
+            Raises a TypeError if it isn't."""
         if type(n) is not int:
             raise TypeError(f"{name} must be an integer")
 
     def dimensions_validator(name, dim):
+        """ Checks if the value for the dimension a positive number.
+            Raises ValueError if it's not."""
         if dim < 1:
             raise ValueError(f"{name} must be > 0")
 
     def coordinates_validator(name, coor):
+        """ Checks if the given value is not negative.
+            Raises a ValueError id it is invalid."""
         if coor < 0:
             raise ValueError(f"{name} must be >= 0")
 
     @property
     def width(self):
-        """ getter for width attribute """
+        """ Getter for width attribute """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Sets the width of the rectangle.
+        """ Sets the width of the rectangle.
 
-        Args:
-        - value (int): The value to be set as the width of the rectangle.
+            Args:
+                value (int): The value to be set as the width of the
+                            rectangle.
         """
         Rectangle.int_validator("width", value)
         Rectangle.dimensions_validator("width", value)
@@ -55,15 +62,16 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """ getter for height attribute """
+        """ Getter for height attribute """
         return self.__height
 
     @height.setter
     def height(self, value):
         """Sets the height of the rectangle.
 
-        Args:
-        - value (int): The value to be set as the height of the rectangle.
+            Args:
+                value (int): The value to be set as the height of the
+                            rectangle.
         """
         Rectangle.int_validator("height", value)
         Rectangle.dimensions_validator("height", value)
@@ -71,15 +79,15 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ getter for x attribute """
+        """ Getter for x attribute. """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """Sets the x of the rectangle.
+        """ Sets the x value of the rectangle.
 
-        Args:
-        - value (int): The value of x.
+            Args:
+                value (int): The value of x.
         """
         Rectangle.int_validator("x", value)
         Rectangle.coordinates_validator("x", value)
@@ -87,43 +95,55 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """ getter for x attribute """
+        """ Getter for x attribute. """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """Sets the y of the rectangle.
+        """ Sets the y of the rectangle.
 
-        Args:
-        - value (int): The value of y.
+            Args:
+                value (int): The value of y.
         """
         Rectangle.int_validator("y", value)
         Rectangle.coordinates_validator("y", value)
         self.__y = value
 
     def area(self):
-        """ calculates the area of the rectangle """
+        """ Calculates the area of the rectangle. """
         return self.__height * self.__width
 
     def display(self):
-        # for h in range(self.__height):
-        #     for w in range(self.__width):
-        print(("\n" * self.__y) + self.__height * ((self.__x * " ") + (self.__width * "#") + "\n"), end="")
+        """ prints a representaion of the rectangle using '#' character. """
+        print(("\n" * self.__y) + self.__height * (
+                (self.__x * " ") +
+                (self.__width * "#") + "\n"), end="")
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
-{self.__width}/{self.__height}"
+        """ Returns a string with the rectangle attributes values. """
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " \
+                f"{self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
+        """ Updates the attributes of an object. Values can be passed either as
+            positional arguments (args) or with their attribute names as
+            keyword arguments (kwargs).
+
+            Args:
+                *args: Positional arguments representing values to be updated.
+                        Must be in the order: "id", "width", "height", "x", "y"
+
+                **kwargs: Keyword arguments representing attribute names and
+                        their alues.
+        """
         attributes = ["id", "width", "height", "x", "y"]
         if len(args) > 0:
             try:
                 for i in range(len(args)):
                     setattr(self, attributes[i], args[i])
-            except(IndexError):
+            except (IndexError):
                 pass
         else:
-                for key, value in kwargs.items():
-                    if key in attributes:
-                        setattr(self, key, value)
-
+            for key, value in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, value)
