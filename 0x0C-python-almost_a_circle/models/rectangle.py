@@ -122,7 +122,7 @@ class Rectangle(Base):
     def __str__(self):
         """ Returns a string with the rectangle attributes values. """
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " \
-                f"{self.__width}/{self.__height}"
+            f"{self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
         """ Updates the attributes of an object. Values can be passed either as
