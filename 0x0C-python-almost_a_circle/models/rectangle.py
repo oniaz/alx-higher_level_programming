@@ -25,18 +25,21 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    @staticmethod
     def int_validator(attribute_name, value):
         """ Checks if the passed value is an int.
             Raises a TypeError if it isn't."""
         if type(value) is not int:
             raise TypeError(f"{attribute_name} must be an integer")
 
+    @staticmethod
     def dimensions_validator(dim_name, dim_value):
         """ Checks if the value for the dimension a positive number.
             Raises ValueError if it's not."""
         if dim_value < 1:
             raise ValueError(f"{dim_name} must be > 0")
 
+    @staticmethod
     def coordinates_validator(coor_name, coor_value):
         """ Checks if the given value is not negative.
             Raises a ValueError id it is invalid."""
