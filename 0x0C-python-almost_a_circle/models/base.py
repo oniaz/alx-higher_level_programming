@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -118,5 +119,59 @@ class Base:
             for instance in attr_list:
                 instance_list.append(cls.create(**instance))
             return instance_list
+        except (FileNotFoundError):
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Given a list of instances of a class, for each instance, a
+            dictionary is generated containing its attribute values. These
+            dictionaries are then placed in a list and saved to a csv file
+            with the name of the class.
+
+            Args:
+                list_objs (list): a list of instances for a class.
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", encoding="utf-8") as file:
+            if list_objs is None:
+                return
+            else:
+                thelist = []
+                for obj in list_objs:
+                    thelist.append(cls.to_dictionary(obj))
+
+                if cls.__name__ == "Rectangle":
+                    headers = ['id', 'width', 'height', 'x', 'y']
+                if cls.__name__ == "Square":
+                    headers = ['id', 'size', 'x', 'y']
+
+                csv_writer = csv.DictWriter(file, fieldnames=headers)
+                csv_writer.writeheader()
+                csv_writer.writerows(thelist)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Creates new instances of the class using instance attributes saved
+            in a csv file with the class name.
+
+            Returns:
+                list: a list of the newly created instances.
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", encoding="utf-8") as file:
+                csv_reader = csv.DictReader(file)
+                attr_list = []
+                for row in csv_reader:
+                    for key, value in row.items():
+                        row[key] = int(value)
+                    attr_list.append(row)
+
+            instance_list = []
+            for instance in attr_list:
+                instance_list.append(cls.create(**instance))
+            return instance_list
+
         except (FileNotFoundError):
             return []
