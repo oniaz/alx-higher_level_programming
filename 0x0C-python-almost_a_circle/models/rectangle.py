@@ -25,23 +25,23 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def int_validator(name, n):
-        """ Checks if n is an int.
+    def int_validator(attribute_name, value):
+        """ Checks if the passed value is an int.
             Raises a TypeError if it isn't."""
-        if type(n) is not int:
-            raise TypeError(f"{name} must be an integer")
+        if type(value) is not int:
+            raise TypeError(f"{attribute_name} must be an integer")
 
-    def dimensions_validator(name, dim):
+    def dimensions_validator(dim_name, dim_value):
         """ Checks if the value for the dimension a positive number.
             Raises ValueError if it's not."""
-        if dim < 1:
-            raise ValueError(f"{name} must be > 0")
+        if dim_value < 1:
+            raise ValueError(f"{dim_name} must be > 0")
 
-    def coordinates_validator(name, coor):
+    def coordinates_validator(coor_name, coor_value):
         """ Checks if the given value is not negative.
             Raises a ValueError id it is invalid."""
-        if coor < 0:
-            raise ValueError(f"{name} must be >= 0")
+        if coor_value < 0:
+            raise ValueError(f"{coor_name} must be >= 0")
 
     @property
     def width(self):

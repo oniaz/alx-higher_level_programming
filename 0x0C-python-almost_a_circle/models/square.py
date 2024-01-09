@@ -22,3 +22,22 @@ class Square(Rectangle):
     def __str__(self):
         """ Returns a string with the square attributes values. """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    @property
+    def size(self):
+        """ getter for size attribute """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """Sets the size of the square.
+
+        Args:
+        - value (int): The value of size.
+        """
+        Rectangle.int_validator("width", value)
+        Rectangle.dimensions_validator("width", value)
+        self.width = value
+        self.height = value
+        # super().width(value)
+        # super().height(value)
