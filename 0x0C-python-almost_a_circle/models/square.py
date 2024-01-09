@@ -25,15 +25,15 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """ getter for size attribute """
+        """ getter for the size attribute. """
         return self.width
 
     @size.setter
     def size(self, value):
         """Sets the size of the square.
 
-        Args:
-        - value (int): The value of size.
+            Args:
+                value (int): The value of one side of the square (size).
         """
         Rectangle.int_validator("width", value)
         Rectangle.dimensions_validator("width", value)
@@ -41,7 +41,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        """ Updates the attributes of a square instancw. Values can be passed
+        """ Updates the attributes of a square instanc. Values can be passed
             either as positional arguments (args) or with their attribute names
             as keyword arguments (kwargs).
 
@@ -49,8 +49,8 @@ class Square(Rectangle):
                 *args: Positional arguments representing values to be updated.
                         Must be in the order: "id", "size", "x", "y"
 
-                **kwargs: Keyword arguments representing attribute names and
-                        their alues.
+                **kwargs: Keyword arguments representing the attribute names
+                        and their values.
         """
         attributes = ["id", "size", "x", "y"]
         if len(args) > 0:
@@ -65,8 +65,11 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
-        """ Returns the dictionary representation of a square instance with
-            the attributes: id, x, size, y
+        """ Generates a representation of the square instance through a
+            dictionary with the instance attributes (id, x, size, y).
+
+            Returns:
+                dict: a dcitionary containing the instance attributes.
         """
         attributes = ["id", "x", "size", "y"]
         description = {}

@@ -10,7 +10,7 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
 
-        """ initializing the rectangle instance.
+        """ Initializing the rectangle instance.
 
             Args:
                 width (int): the width of the rectangle.
@@ -87,10 +87,10 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """ Sets the x value of the rectangle.
+        """ Sets the value of the x cooridinate of the rectangle.
 
             Args:
-                value (int): The value of x.
+                value (int): The value of the x cooridinate.
         """
         Rectangle.int_validator("x", value)
         Rectangle.coordinates_validator("x", value)
@@ -103,27 +103,36 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """ Sets the y of the rectangle.
+        """ Sets the value of the y cooridinate of the rectangle.
 
             Args:
-                value (int): The value of y.
+                value (int): The value of the y cooridinate.
         """
         Rectangle.int_validator("y", value)
         Rectangle.coordinates_validator("y", value)
         self.__y = value
 
     def area(self):
-        """ Calculates the area of the rectangle. """
+        """ Calculates the area of the rectangle.
+
+            Returns:
+                int: the rectangle area.
+        """
         return self.__height * self.__width
 
     def display(self):
-        """ prints a representaion of the rectangle using '#' character. """
+        """ Prints a representaion of the rectangle using '#' character. """
         print(("\n" * self.__y) + self.__height * (
                 (self.__x * " ") +
                 (self.__width * "#") + "\n"), end="")
 
     def __str__(self):
-        """ Returns a string with the rectangle attributes values. """
+        """ Genetrates a string representation of the rectangle instance
+            containg the instance attributes values.
+
+            Returns:
+                str: string representaion of the instance.
+        """
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - " \
             f"{self.__width}/{self.__height}"
 
@@ -153,7 +162,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ Returns the dictionary representation of a Rectangle instance with
-            the attributes: x, y, id, height, width
+            the attributes: x, y, id, height, width.
         """
         attributes = ["x", "y", "id", "height", "width"]
         description = {}
