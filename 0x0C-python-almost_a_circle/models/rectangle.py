@@ -125,9 +125,9 @@ class Rectangle(Base):
             f"{self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
-        """ Updates the attributes of an object. Values can be passed either as
-            positional arguments (args) or with their attribute names as
-            keyword arguments (kwargs).
+        """ Updates the attributes of a rectangle instance. Values can be
+            passed either as positional arguments (args) or with their
+            attribute names as keyword arguments (kwargs).
 
             Args:
                 *args: Positional arguments representing values to be updated.

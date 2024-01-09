@@ -39,5 +39,27 @@ class Square(Rectangle):
         Rectangle.dimensions_validator("width", value)
         self.width = value
         self.height = value
-        # super().width(value)
-        # super().height(value)
+
+    def update(self, *args, **kwargs):
+        """ Updates the attributes of a square instancw. Values can be passed
+            either as positional arguments (args) or with their attribute names
+            as keyword arguments (kwargs).
+
+            Args:
+                *args: Positional arguments representing values to be updated.
+                        Must be in the order: "id", "size", "x", "y"
+
+                **kwargs: Keyword arguments representing attribute names and
+                        their alues.
+        """
+        attributes = ["id", "size", "x", "y"]
+        if len(args) > 0:
+            try:
+                for i in range(len(args)):
+                    setattr(self, attributes[i], args[i])
+            except (IndexError):
+                pass
+        else:
+            for key, value in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, value)
