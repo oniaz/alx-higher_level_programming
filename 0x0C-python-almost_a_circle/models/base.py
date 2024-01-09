@@ -53,10 +53,19 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """ that returns an instance with all attributes already set. """
+        """ creates an instance with all attributes already set. """
         if cls.__name__ is "Rectangle":
+            if ("width" not in dictionary) and ("height" not in dictionary):
+                dummy = cls()
+            if ("width" not in dictionary):
+                dummy = cls(height = 1)
+            if ("height" not in dictionary):
+                dummy = cls(width = 1)
             dummy = cls(1, 1)
+
         elif cls.__name__ is "Square":
+            if ("size" not in dictionary):
+                dummy = cls()
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy

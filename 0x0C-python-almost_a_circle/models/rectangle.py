@@ -15,8 +15,8 @@ class Rectangle(Base):
             Args:
                 width (int): the width of the rectangle.
                 height (int): the height of the rectangle.
-                x (int):
-                y (int):
+                x (int): x coordinate.
+                y (int): y coordinate.
                 id (int): the instance id.
         """
         super().__init__(id)
