@@ -43,4 +43,9 @@ class Base:
                 for obj in list_objs:
                     thelist.append(cls.to_dictionary(obj))
                 file.write(Base.to_json_string(thelist))
-                # json.dump(thelist, file)
+
+    def from_json_string(json_string):
+        """ returns the list of the JSON string representation """
+        if json_string is None:
+            return []
+        return json.loads(json_string)
