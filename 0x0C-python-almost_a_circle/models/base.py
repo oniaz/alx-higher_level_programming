@@ -58,9 +58,9 @@ class Base:
             if ("width" not in dictionary) and ("height" not in dictionary):
                 dummy = cls()
             if ("width" not in dictionary):
-                dummy = cls(height = 1)
+                dummy = cls(height=1)
             if ("height" not in dictionary):
-                dummy = cls(width = 1)
+                dummy = cls(width=1)
             dummy = cls(1, 1)
 
         elif cls.__name__ is "Square":
