@@ -1,4 +1,4 @@
--- task 6
+-- task 7
 -- Creating the database 'hbtn_0d_usa' with table 'cities'
 -- 'cities' table has the fields:
 --      'id' - INT unique, auto generated, not null and is a primary key.
