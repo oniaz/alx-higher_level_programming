@@ -1,0 +1,11 @@
+-- task 11
+-- Listing all shows in the database.
+-- Each record displays the show title, and the its genre id.
+
+SELECT tv_shows.title,
+       tv_show_genres.genre_id
+FROM   tv_shows
+       LEFT JOIN tv_show_genres
+         ON tv_show_genres.show_id = tv_shows.id
+ORDER  BY tv_shows.title ASC,
+          tv_show_genres.genre_id ASC; 
