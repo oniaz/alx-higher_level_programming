@@ -22,6 +22,6 @@ if __name__ == "__main__":
                     City, State.id == City.state_id).order_by(City.id).all()
 
     for row in rows:
-        print(f"{row[0]}: {row[1]} {row[2]}")
+        print(f"{row[0]}: ({row[1]}) {row[2]}")
 
     session.close()
