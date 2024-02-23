@@ -27,5 +27,4 @@ if __name__ == "__main__":
         print(f"{row.id}: {row.name}")
 
     # Commit changes and close session
-    session.commit()
     session.close()
