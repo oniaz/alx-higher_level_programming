@@ -22,6 +22,8 @@ if __name__ == "__main__":
     # Print the results
     if row:
         print(f"{row.id}: {row.name}")
+    else:
+        print()
 
     # Commit changes and close session
     session.commit()
