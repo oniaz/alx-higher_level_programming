@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Base Module"""
+"""State Module"""
 
 
 from sqlalchemy import Column, Integer, String
