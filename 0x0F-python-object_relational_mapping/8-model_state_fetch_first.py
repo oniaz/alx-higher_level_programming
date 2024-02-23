@@ -23,7 +23,7 @@ if __name__ == "__main__":
     if row:
         print(f"{row.id}: {row.name}")
     else:
-        print()
+        print("Nothing")
 
     # Commit changes and close session
     session.commit()
