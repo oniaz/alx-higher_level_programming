@@ -20,7 +20,8 @@ if __name__ == "__main__":
     # Query all rows from the State
     row = session.query(State).order_by(State.id).first()
     # Print the results
-    print(f"{row.id}: {row.name}")
+    if row:
+        print(f"{row.id}: {row.name}")
 
     # Commit changes and close session
     session.commit()
