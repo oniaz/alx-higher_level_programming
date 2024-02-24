@@ -20,6 +20,8 @@ class State(Base):
             unique=True,
             nullable=False,
             primary_key=True)
+
     name = Column(String(128), nullable=False)
 
-    cities = relationship("City", back_populates = "state")
+    cities = relationship(
+            "City", cascade="all, delete-orphan", back_populates="state")
