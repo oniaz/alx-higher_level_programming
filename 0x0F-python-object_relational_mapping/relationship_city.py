@@ -5,7 +5,6 @@
 
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
 from model_state import Base
 
 
@@ -26,7 +25,7 @@ class City(Base):
 
     state_id = Column(
            Integer,
-           ForeignKey('states.id', ondelete="CASCADE"),
+           ForeignKey('states.id'),
            nullable=False)
 
-    state = relationship("State", back_populates="cities")
+    state = relationship("State", back_populates = "citites")
