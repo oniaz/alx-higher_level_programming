@@ -22,4 +22,4 @@ class State(Base):
             primary_key=True)
     name = Column(String(128), nullable=False)
 
-    cities = relationship("City", back_populates = "states")
+    cities = relationship("City", back_populates = "state")
