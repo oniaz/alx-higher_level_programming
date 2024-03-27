@@ -15,10 +15,11 @@ request.get(url, (error, response, body) => {
 
   for (let i = 0; i < jsonData.length; i++) {
     const task = jsonData[i];
-    if (!result[task.userId]) {
-      result[task.userId] = 0;
-    }
+
     if (task.completed) {
+      if (!result[task.userId]) {
+        result[task.userId] = 0;
+      }
       result[task.userId] += 1;
     }
   }
