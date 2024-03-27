@@ -5,7 +5,7 @@ const request = require('request');
 const movieID = process.argv[2];
 const url = `https://swapi-api.alx-tools.com/api/films/${movieID}`;
 
-function fetchCharacterJson(url) {
+function fetchCharacterJson (url) {
   return new Promise((resolve, reject) => {
     request(url, (error, response, body) => {
       if (error) {
@@ -17,7 +17,7 @@ function fetchCharacterJson(url) {
   });
 }
 
-async function fetchCharacterName(urls) {
+async function fetchCharacterName (urls) {
   for (const url of urls) {
     try {
       const characterJson = JSON.parse(await fetchCharacterJson(url));
