@@ -12,12 +12,14 @@ request.get(url, (error, response, body) => {
 
   let count = 0;
   const jsonData = JSON.parse(body);
-  const characterUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
+  const charRegex = /\/18\/$/;
 
   for (let i = 0; i < jsonData.results.length; i++) {
     const movie = jsonData.results[i];
-    if (movie.characters.includes(characterUrl)) {
-      count++;
+    for (let j = 0; j < movie.characters.length; j++) {
+      if (charRegex.test(movie.characters[j])) {
+        count++;
+      }
     }
   }
   console.log(count);
