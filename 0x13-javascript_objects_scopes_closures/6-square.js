@@ -5,7 +5,9 @@ const BaseSquare = require('./5-square.js');
 class Square extends BaseSquare {
   charPrint (c) {
     if (!c) c = 'X';
-    console.log((c.repeat(this.width) + '\n').repeat(this.height));
+    for (let h = 0; h < this.height; h++) {
+      console.log(c.repeat(this.width));
+    }
   }
 }
 
