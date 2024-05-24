@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const Rectangle = require('./4-rectangle');
 
-const r1 = new Rectangle(2, 3);
+const r1 = new Rectangle(1, 2);
 console.log('Normal:');
 r1.print();
 
